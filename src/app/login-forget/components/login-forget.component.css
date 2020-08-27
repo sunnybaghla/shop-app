@@ -1,0 +1,28 @@
+.Page
+{
+    background: linear-gradient(-45deg, #87CEEB,#36003C);
+
+}
+.txtField
+{
+
+    font-size: 16;
+    color: #BF006A;
+    border-bottom-width: 1;
+    border-bottom-color: transparent
+
+}
+.nextButton
+{
+    color: white;
+    background-color:#BF006A;
+
+
+}
+.nextButton:highlighted
+{
+    color: white;
+    background-color:red;
+
+
+}

@@ -1,0 +1,74 @@
+<Page>
+  <StackLayout>
+    <StackLayout height="180  " marginTop='25' style="background: linear-gradient(-45deg, #87CEEB,#36003C);
+    ">
+      <GridLayout columns="*,*" margin='10' height="100">
+        <CardView radius='50' elevation='5' col="0" (tap)="selectUpperIndex(0)" margin='5' [class]="selctedUpperGrid == 0 ? 'active-grid' : 'in-active-grid' ">
+
+               <StackLayout style="vertical-align: middle;">
+              <label text="ACTIVE ITEM" class="upper-item-txt" fontSize='16'></label>
+              <label [text]="actItem" class="upper-item-lbl"></label>
+            </StackLayout>
+
+            </CardView>
+
+             <CardView radius='50' elevation='5' margin='5' col="1" (tap)="selectUpperIndex(1)"  [class]="selctedUpperGrid == 1 ? 'active-grid' : 'in-active-grid' " >
+              <StackLayout style="vertical-align: middle;">
+             <label text="INACTIVE ITEM" class="upper-item-txt" fontSize='16'></label>
+             <label [text]="inAct" class="upper-item-lbl"></label>
+           </StackLayout>
+             </CardView>
+      </GridLayout>
+      <RadListView [items]="itemData">
+        <ListViewLinearLayout tkListViewLayout scrollDirection="Horizontal">
+        </ListViewLinearLayout>
+              <!-- <StackLayout orientation="Horizontal" width="80%"> -->
+
+                            <ng-template let-i="index" let-item="item">
+                              <StackLayout>
+            <label [text]="getItem(item.type)" (tap)="itemTap(i,item.type)" class="item-inactive" [class.item-active]="selectedIndex==i"></label>
+          </StackLayout>
+                            </ng-template>
+
+          <!-- </StackLayout> -->
+
+
+
+        <!-- </ng-template> -->
+      </RadListView>
+
+    </StackLayout>
+
+      <StackLayout>
+        <ListView [items]="itemData[selectedIndex].data">
+          <ng-template let-item="item" let-i="index">
+            <StackLayout >
+            <CardView elevation='5' margin='5' >
+              <GridLayout columns="*,3*,*" height="80">
+                <Image col="0" [src]="item.img" (tap)="OnimgTap(i)"></Image>
+                <StackLayout col="1" marginLeft='5'>
+                  <GridLayout columns="*,*,*" height="30">
+                    <label col="0" [text]="item.name" style="font: 16;font-weight: 700;"></label>
+                    <label [text]="'#'+item.orderNo" col="1"></label>
+                    <label col="2" [text]="'₹'+item.price" color="blue"></label>
+                    </GridLayout>
+
+                        <label textWrap='true' text="Veg    Strabery    Non Veg" style="font-size: 14;"></label>
+
+                </StackLayout>
+                <Image col="2" src="https://imageog.flaticon.com/icons/png/512/43/43110.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"></Image>
+
+                <!-- <CheckBox col="2" #CB1 text="CheckBox Label" checked="false"></CheckBox> -->
+
+                <!-- <label col="2" text="249" style="color: blue;vertical-align: middle;font-size: 16;"></label> -->
+              </GridLayout>
+              </CardView>
+            </StackLayout>
+          </ng-template>
+        </ListView>
+
+      </StackLayout>
+    </StackLayout>
+
+
+</Page>

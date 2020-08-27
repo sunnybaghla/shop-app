@@ -1,0 +1,50 @@
+<Page>
+  <StackLayout>
+    <StackLayout height="50" orientation="Horizontal"  style="width: 90%;margin-top: 35">
+      <GridLayout width="80" (tap)="selctedIndex(0)">
+        <label text="All Order" [class.order-sort-selected]="selectedIndex==0" class="order-sort"></label>
+      </GridLayout >
+      <GridLayout width="80" (tap)="selctedIndex(1)">
+       <label text="Preparing" [class.order-sort-selected]="selectedIndex==1" class="order-sort"></label>
+     </GridLayout>
+     <GridLayout width="80" (tap)="selctedIndex(2)">
+       <label text="Canceld" [class.order-sort-selected]="selectedIndex==2" class="order-sort" ></label>
+     </GridLayout>
+     <GridLayout width="80" (tap)="selctedIndex(3)">
+       <label text="Completed" [class.order-sort-selected]="selectedIndex==3" class="order-sort"></label>
+     </GridLayout>
+   </StackLayout>
+   <StackLayout  >
+     <ListView [items]="orderList">
+       <ng-template let-i="index" let-item="item">
+         <StackLayout (tap)="nxtTap(item.orderNo)">
+           <CardView elevation='2' margin='5'>
+             <StackLayout>
+               <CardView >
+                 <label [text]="item.status == 0 ? 'item Delay 20 min':item.status==1?'Deliver Before'+item.deliverTime:'Sucessfully Deliverd'" class="order-heading" [class]="item.status==0?'order-heading':item.status==1?'order-heading-prepare':'order-heading-sucess'"></label>
+               </CardView>
+                      <GridLayout rows="*,*" columns="*,*" height="52" marginLeft='10' style="vertical-align: middle;">
+
+                   <label row="0" col="0" [text]="'#'+ item.orderNo" style="color: skyblue;font-size: 15"></label>
+                   <label row="0" col="1" [text]="'Assign '+assign()+' ago'" color="gray" ></label>
+
+                <GridLayout row="1" col="0">
+                 <label [text]="item.item + ' items'"></label>
+                </GridLayout>
+                <GridLayout row="2" col="1">
+                 <label [text]="'RS '+item.earnings"></label>
+               </GridLayout>
+           </GridLayout>
+             </StackLayout>
+            </CardView>
+
+
+         </StackLayout>
+
+
+       </ng-template>
+     </ListView>
+   </StackLayout>
+
+  </StackLayout>
+</Page>

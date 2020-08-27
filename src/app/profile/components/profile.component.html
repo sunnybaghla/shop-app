@@ -1,0 +1,173 @@
+<Page class="page">
+  <StackLayout>
+    <GridLayout height="25%">
+      <CardView elevation='10' margin='5' height="120" width="120">
+        <Image height="120" width="120" style="border-width: 2;padding: 5;border-color: skyblue;" [src]="userImg">
+        </Image>
+      </CardView>
+    </GridLayout>
+    <CardView elevation='5' margin='10' height="40">
+      <StackLayout margin='5' orientation="Horizontal" style="font-size: 14;color: skyblue;">
+        <label [text]="name"></label>
+        <label text="Change Password" (tap)="changePass()" marginLeft="40%" color="red"></label>
+      </StackLayout>
+    </CardView>
+    <StackLayout>
+      <CardView (tap)="onper()" elevation='10' margin='10' height="40">
+        <GridLayout columns="2*,*">
+          <StackLayout col="0" orientation="Horizontal">
+            <Image [src]="iconImg"></Image>
+            <Label style="text-align: left;font-size: 16;" text="Personal Information"></Label>
+          </StackLayout>
+          <label col="2" style="text-align: right;margin-right: 20;" text="+more"></label>
+        </GridLayout>
+      </CardView>
+      <StackLayout *ngIf="flag">
+        <StackLayout orientation="Horizontal" class="prfileContainer">
+          <label text="Name" color="gray"></label>
+          <label [text]="name" style="width: 100%;text-align: right;"></label>
+        </StackLayout>
+        <StackLayout orientation="Horizontal" class="prfileContainer">
+          <label text="E-mail" color="gray"></label>
+          <label [text]="email" style="width: 100%;text-align: right;"></label>
+        </StackLayout>
+        <StackLayout orientation="Horizontal" class="prfileContainer">
+          <label text="Mobile" color="gray"></label>
+          <label [text]="mobile" style="width: 100%;text-align: right;"></label>
+        </StackLayout>
+        <StackLayout orientation="Horizontal" class="prfileContainer">
+          <label text="Full Adress" color="gray"></label>
+          <label [text]="adress" textWrap="true" style="width: 100%;text-align: right;"></label>
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout>
+      <CardView (tap)="onper2()" elevation='10' margin='10' height="40">
+        <GridLayout columns="2*,*">
+          <StackLayout col="0" orientation="Horizontal">
+            <Image [src]="iconImg"></Image>
+            <Label style="text-align: left;font-size: 16;" text="Vehicle Information"></Label>
+          </StackLayout>
+          <label col="2" style="text-align: right;margin-right: 20;" text="+more"></label>
+        </GridLayout>
+      </CardView>
+      <StackLayout *ngIf="flag2">
+        <StackLayout orientation="Horizontal" class="prfileContainer">
+          <label text="GST No" color="gray"></label>
+          <label [text]="gstNo" style="width: 100%;text-align: right;"></label>
+        </StackLayout>
+        <StackLayout orientation="Horizontal" class="prfileContainer">
+          <label text="Gst more Iffo" color="gray"></label>
+          <label [text]="gstNo" style="width: 100%;text-align: right;"></label>
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout>
+      <CardView (tap)="onper3()" elevation='10' margin='10' height="40">
+        <GridLayout columns="2*,*">
+          <StackLayout col="0" orientation="Horizontal">
+            <Image [src]="iconImg"></Image>
+            <Label style="text-align: left;font-size: 16;" text="Bank Information"></Label>
+          </StackLayout>
+          <label col="2" style="text-align: right;margin-right: 20;" text="+more"></label>
+        </GridLayout>
+      </CardView>
+      <StackLayout *ngIf="flag3">
+        <StackLayout orientation="Horizontal" class="prfileContainer">
+          <label text="Bank Name" color="gray"></label>
+          <label [text]="bankName" style="width: 100%;text-align: right;"></label>
+        </StackLayout>
+        <StackLayout orientation="Horizontal" class="prfileContainer">
+          <label text="Account No" color="gray"></label>
+          <label [text]="bankAcc" style="width: 100%;text-align: right;"></label>
+        </StackLayout>
+        <StackLayout orientation="Horizontal" class="prfileContainer">
+          <label text="IFSC Code" color="gray"></label>
+          <label [text]="bankIFSC" style="width: 100%;text-align: right;"></label>
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout>
+      <CardView (tap)="onper4()" elevation='10' margin='10' height="40">
+        <GridLayout columns="2*,*">
+          <StackLayout col="0" orientation="Horizontal">
+            <Image [src]="iconImg"></Image>
+            <Label style="text-align: left;font-size: 16;" text="Delivery Information"></Label>
+          </StackLayout>
+          <label col="2" style="text-align: right;margin-right: 20;" text="+more"></label>
+        </GridLayout>
+      </CardView>
+      <StackLayout *ngIf="flag4" orientation="Horizontal" class="prfileContainer">
+        <label text="Pin Code " color="gray"></label>
+        <StackLayout *ngFor="let item of pinCode" width="100%" oreintation="Horizontal">
+          <ScrollView>
+            <label style="border-width: 1;" textWrap="true" [text]="item"></label>
+          </ScrollView>
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+
+    <!-- <StackLayout margin='20' marginTop='0'>
+
+                    <StackLayout orientation="Horizontal" class="prfileContainer">
+                      <label  text="Name" color="gray" ></label>
+                      <label [text]="name" style="width: 100%;text-align: right;" ></label>
+
+                    </StackLayout>
+                    <StackLayout orientation="Horizontal" class="prfileContainer">
+                      <label  text="E-mail" color="gray"></label>
+                      <label [text]="email" style="width: 100%;text-align: right;" ></label>
+
+                    </StackLayout>
+                                 <StackLayout orientation="Horizontal" class="prfileContainer">
+                      <label  text="Mobile" color="gray"></label>
+                      <label [text]="mobile" style="width: 100%;text-align: right;" ></label>
+
+                    </StackLayout>
+                     <StackLayout orientation="Horizontal" class="prfileContainer">
+                      <label  text="Full Adress" color="gray"></label>
+                      <label [text]="adress" textWrap="true" style="width: 100%;text-align: right;" ></label>
+
+                    </StackLayout>
+                     <StackLayout orientation="Horizontal" class="prfileContainer">
+                      <label  text="Vehicle No" color="gray"></label>
+                      <label [text]="verhicleNO" style="width: 100%;text-align: right;" ></label>
+
+                    </StackLayout>
+                    <StackLayout orientation="Horizontal" class="prfileContainer">
+                      <label  text="Vehicle Type" color="gray"></label>
+                      <label [text]="verhicleNO" style="width: 100%;text-align: right;" ></label>
+
+                    </StackLayout>
+                    <StackLayout orientation="Horizontal" class="prfileContainer">
+                      <label  text="Bank Name" color="gray"></label>
+                      <label [text]="bankName" style="width: 100%;text-align: right;" ></label>
+
+                    </StackLayout>
+                    <StackLayout orientation="Horizontal" class="prfileContainer">
+                      <label  text="Account No" color="gray"></label>
+                      <label [text]="bankAcc" style="width: 100%;text-align: right;" ></label>
+
+                    </StackLayout>
+                    <StackLayout orientation="Horizontal" class="prfileContainer">
+                      <label  text="IFSC Code" color="gray"></label>
+                      <label [text]="bankIFSC" style="width: 100%;text-align: right;" ></label>
+
+                    </StackLayout>
+                    <StackLayout orientation="Horizontal" class="prfileContainer">
+                      <label  text="Pin Code Acess" color="gray"></label>
+                      <StackLayout *ngFor="let item of pinCode" width="100%" oreintation="Horizontal">
+                        <ScrollView>
+                          <label textWrap="true" [text]="item"></label>
+                        </ScrollView>
+                      </StackLayout>
+
+
+                    </StackLayout>
+                  </StackLayout>
+
+
+   -->
+
+  </StackLayout>
+</Page>

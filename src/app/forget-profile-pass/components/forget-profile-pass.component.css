@@ -1,0 +1,17 @@
+.container
+{
+    border-width: 2;
+    border-radius: 100;
+    border-color: skyblue;
+    background-color: lightgrey;
+    margin: 7;
+    font-size: 16;
+
+}
+.saveTap
+{
+    background-color:lightseagreen;
+    border-radius: 50%;
+    color: skyblue;
+    margin-top: 10;
+}

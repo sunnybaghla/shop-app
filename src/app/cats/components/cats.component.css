@@ -1,0 +1,25 @@
+.listTop
+{
+    height: 50;
+    color: white;
+    border-width: 2;
+    background-color:pink;
+    border-color:white;
+    vertical-align: middle;
+
+    text-align: center   ;
+
+
+}
+.Selected
+{
+    height: 50;
+
+    color: white;
+    border-width: 2;
+    background-color:palevioletred;
+    border-color:white;
+    vertical-align: middle;
+    text-align: center   ;
+
+}

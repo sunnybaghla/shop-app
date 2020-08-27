@@ -1,0 +1,21 @@
+<StackLayout>
+  <StackLayout marginTop='28'>
+      <label text="Request To Upload" style="text-align: center;vertical-align: middle;background-color: palevioletred;color: white;font-weight: 600;height: 40;vertical-align: middle;"></label>
+    <RadListView [items]="cata">
+      <ListViewStaggeredLayout tkListViewLayout scrollDirection="Vertical" spanCount="3">
+      </ListViewStaggeredLayout>
+      <ng-template tkListItemTemplate let-i="index" let-item="item">
+        <StackLayout>
+          <CardView ripple="true" elevation="4" margin='6'>
+            <GridLayout rows="8*,2*" margin="4" >
+              <Image row="0" stretch="fill" [src]="item.ImgUrl"></Image>
+              <label row="1" [text]="item.name"
+                style="text-align: center;vertical-align: middle;color: palevioletred;"></label>
+            </GridLayout>
+          </CardView>
+        </StackLayout>
+      </ng-template>
+    </RadListView>
+    <label [text]="ssd"></label>
+  </StackLayout>
+</StackLayout>

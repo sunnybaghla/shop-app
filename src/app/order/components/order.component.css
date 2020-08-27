@@ -1,0 +1,31 @@
+.order-sort
+{
+    color: gray;
+    font-size: 14;
+}
+.order-sort-selected
+{
+    color: black;
+    font-size: 16;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.order-heading
+{
+    color: white;
+    text-align: center;
+    background: linear-gradient(-45deg, red,#36003C);
+}
+.order-heading-sucess
+{
+    color: white;
+    text-align: center;
+    background: linear-gradient(-45deg, #87CEEB,green);
+}
+.order-heading-prepare
+{
+    color: white;
+    text-align: center;
+    background: linear-gradient(-45deg, #87CEEB,#36003C);
+
+}
+

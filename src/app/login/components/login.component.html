@@ -1,0 +1,27 @@
+<Page class="page">
+  <StackLayout marginTop='10%'>
+    <CardView radius='100' elevation='20' margin='10' height="60%" style="background-color: white;">
+      <GridLayout rows="*,*,*,*,*" style="text-align: center;">
+        <label row='0' text="Login" marginTop='10' fontSize='20'></label>
+        <StackLayout row="1" orientation="Horizontal" class="loginDesign">
+          <Image margin='4' marginLeft='10' height="50"
+            [src]="userNameIcon">
+          </Image>
+          <TextField #userTxt width="100%" hint="Username"
+            class="loginContainer">
+          </TextField>
+        </StackLayout>
+        <StackLayout row="2" orientation="Horizontal" class="loginDesign">
+          <Image margin='4' marginLeft='10'
+            [src]="PasswordIcon">
+          </Image>
+          <TextField #passTxt hint="Password
+            " width="100%" class="loginContainer" [secure]="chkSecure">
+          </TextField>
+        </StackLayout>>
+        <button #forgetButton row='3' text="Forget Password" (tap)="forgetpass()" class="forgetButton"></button>
+        <button row="4" (tap)="onSign()" text="Sign In" class="signInButton"></button>
+      </GridLayout>
+    </CardView>
+  </StackLayout>
+</Page>

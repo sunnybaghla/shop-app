@@ -1,0 +1,56 @@
+.upper-item-txt
+{
+    text-align: center;
+    font-style: 18;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: 800;
+}
+.upper-item-lbl
+{
+    vertical-align: middle;
+    text-align: center;
+    font-size: 14;
+    white-space: nowrap;
+    font-weight: bolder;
+    font-size: 16;
+    font-weight: 700;
+    color: gray;
+}
+.active-grid
+{
+    background-color:whitesmoke;
+     width:120 ;
+}
+.in-active-grid
+{
+    background-color:lightgray;
+     width:120 ;
+     color: gray;
+}
+.item-active
+{
+    margin: 3;
+    border-width: 2;
+    padding: 5;
+    width: auto;
+    font-weight: 900;
+    vertical-align: middle;
+    text-align: center;
+    border-color: white;
+    font-size: 14;
+    color: white;
+}
+.item-inactive
+{
+    margin: 3;
+    /* border-width: 2; */
+    padding: 5;
+    width: auto;
+    font-weight: 900;
+    vertical-align: middle;
+    text-align: center;
+    /* border-color: white; */
+    font-size: 14;
+    color: white;
+}

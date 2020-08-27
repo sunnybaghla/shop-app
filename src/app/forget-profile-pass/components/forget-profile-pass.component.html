@@ -1,0 +1,12 @@
+<Page>
+  <StackLayout margin='10'>
+
+    <GridLayout class="container" height='50' >
+      <TextField #new hint="New Password" style="border-bottom-color: transparent;text-align: center;"></TextField>
+      </GridLayout>
+      <GridLayout class="container" height='50' >
+        <TextField #retype hint="Reype Password" style="border-bottom-color: transparent;text-align: center;"></TextField>
+        </GridLayout>
+        <button text="Save" (tap)="onSave()" class="saveTap"></button>
+  </StackLayout>
+  </Page>

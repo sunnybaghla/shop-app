@@ -1,0 +1,58 @@
+.UpperGiedContainer
+{
+    background: linear-gradient(-45deg, #87CEEB,#36003C);
+}
+.UpperItemContainer
+{
+    background-color: whitesmoke;
+    height: 110
+     ;width: 105;
+     vertical-align: top;
+     margin-top: 30;
+
+}
+.grid-item-upper-text
+{
+    font-size: 16;
+    color: gray;
+    font-style: oblique;
+}
+.grid-item-mid-text
+{
+    font-size: 15;
+    color:black;
+    font-weight: 1000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.order-sort
+{
+    color: gray;
+    font-size: 14;
+}
+.order-sort-selected
+{
+    color: black;
+    font-size: 16;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.order-heading
+{
+    color: white;
+    text-align: center;
+    background: linear-gradient(-45deg, red,#36003C);
+}
+.order-heading-sucess
+{
+    color: white;
+    text-align: center;
+    background: linear-gradient(-45deg, #87CEEB,green);
+}
+.order-heading-prepare
+{
+    color: white;
+    text-align: center;
+    background: linear-gradient(-45deg, #87CEEB,#36003C);
+
+}
+

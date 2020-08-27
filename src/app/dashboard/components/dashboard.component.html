@@ -1,0 +1,97 @@
+<Page>
+  <StackLayout>
+    <StackLayout class="UpperGiedContainer" height="25">
+
+    </StackLayout>
+    <StackLayout height="30%" class="UpperGiedContainer">
+      <GridLayout columns="*,*,*">
+        <CardView col="0" elevation='10' class="UpperItemContainer">
+          <StackLayout style="text-align: center;vertical-align: middle;">
+            <label text="Total Income" class="grid-item-upper-text"></label>
+            <label text="$123" class="grid-item-mid-text"></label>
+            <label text="41 Order" class="grid-item-mid-text"></label>
+          </StackLayout>
+        </CardView>
+        <CardView col="1" elevation='10' class="UpperItemContainer">
+          <StackLayout style="text-align: center;vertical-align: middle;">
+            <label text="Total Income" class="grid-item-upper-text"></label>
+            <label text="$123" class="grid-item-mid-text"></label>
+            <label text="41 Order" class="grid-item-mid-text"></label>
+          </StackLayout>
+        </CardView>
+        <CardView col="2" elevation='10' class="UpperItemContainer">
+          <StackLayout style="text-align: center;vertical-align: middle;">
+            <label text="Total Income" class="grid-item-upper-text"></label>
+            <label text="$123" class="grid-item-mid-text"></label>
+            <label text="41 Order" class="grid-item-mid-text"></label>
+          </StackLayout>
+        </CardView>
+      </GridLayout>
+    </StackLayout>
+    <StackLayout height="50" orientation="Horizontal"  style="width: 90%;margin-top: 15">
+       <GridLayout width="80" (tap)="selctedIndex(0)">
+         <label text="All Order" [class.order-sort-selected]="selectedIndex==0" class="order-sort"></label>
+       </GridLayout >
+       <GridLayout width="80" (tap)="selctedIndex(1)">
+        <label text="Preparing" [class.order-sort-selected]="selectedIndex==1" class="order-sort"></label>
+      </GridLayout>
+      <GridLayout width="80" (tap)="selctedIndex(2)">
+        <label text="Canceld" [class.order-sort-selected]="selectedIndex==2" class="order-sort" ></label>
+      </GridLayout>
+      <GridLayout width="80" (tap)="selctedIndex(3)">
+        <label text="Completed" [class.order-sort-selected]="selectedIndex==3" class="order-sort"></label>
+      </GridLayout>
+    </StackLayout>
+    <StackLayout  >
+      <ListView [items]="orderList">
+        <ng-template let-i="index" let-item="item">
+          <StackLayout (tap)="nxtTap(item.orderNo)">
+            <CardView elevation='2' margin='5'>
+              <StackLayout>
+                <CardView >
+                  <label [text]="item.status == 0 ? 'item Delay 20 min':item.status==1?'Deliver Before'+item.deliverTime:'Sucessfully Deliverd'" class="order-heading" [class]="item.status==0?'order-heading':item.status==1?'order-heading-prepare':'order-heading-sucess'"></label>
+                </CardView>
+                       <GridLayout rows="*,*" columns="*,*" height="52" marginLeft='10' style="vertical-align: middle;">
+
+                    <label row="0" col="0" [text]="'#'+ item.orderNo" style="color: skyblue;font-size: 15"></label>
+                    <label row="0" col="1" [text]="'Assign '+assign()+' ago'" color="gray" ></label>
+
+                 <GridLayout row="1" col="0">
+                  <label [text]="item.item + ' items'"></label>
+                 </GridLayout>
+                 <GridLayout row="2" col="1">
+                  <label [text]="'RS '+item.earnings"></label>
+                </GridLayout>
+            </GridLayout>
+              </StackLayout>
+             </CardView>
+
+
+          </StackLayout>
+
+
+        </ng-template>
+      </ListView>
+         </StackLayout>
+
+      <!-- <GridLayout rows="*,*,*">
+         <StackLayout row="0" orientation="Horizontal">
+             <GridLayout >
+               <button text="Prepating"></button>
+              </GridLayout>
+              <GridLayout >
+                <button text="Preapare befor 8:00"></button>
+               </GridLayout>
+           </StackLayout>
+           <StackLayout row="1">
+              <label text="#9124242"></label>
+              <label text="6 Itmes"></label>
+           </StackLayout>
+           <StackLayout row="2">
+            <label text="2:40"></label>
+            <label text="Rs 249"></label>
+         </StackLayout>
+      </GridLayout> -->
+
+  </StackLayout>
+</Page>
